@@ -1,0 +1,165 @@
+[
+  {
+    "page_position": 1,
+    "page_position_length": 1,
+    "context": {},
+    "selectors": {
+      "job title": [],
+      "company name": [],
+      "tags": [],
+      "date posted": []
+    },
+    "link": [
+      {
+        "href": "https://www.linkedin.com/checkpoint/rp/request-password-reset?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fjobs%2Fsearch-results%2F%3Fkeywords%3Dmachine%2Blearning%26origin%3DJOB_COLLECTION_PAGE_SEARCH_BUTTON%26_l%3Den",
+        "text": "\n            Forgot password?\n          ",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fsearch-results%2F%3Fkeywords%3Dmachine%2Blearning%26origin%3DJOB_COLLECTION_PAGE_SEARCH_BUTTON%26_l%3Den",
+        "text": "Join now",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/user-agreement",
+        "text": "User Agreement",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/privacy-policy",
+        "text": "Privacy Policy",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/cookie-policy",
+        "text": "Cookie Policy",
+        "type": "a"
+      }
+    ],
+    "data": [],
+    "success": true,
+    "advance_config": {
+      "console": [],
+      "network": [],
+      "cookies": []
+    },
+    "_usage": {
+      "input_tokens": 50,
+      "output_tokens": 261,
+      "inference_time_tokens": 30959,
+      "total_tokens": 31270
+    }
+  },
+  {
+    "page_position": 1,
+    "page_position_length": 1,
+    "context": {},
+    "selectors": {
+      "job title": [],
+      "company name": [],
+      "tags": [],
+      "date posted": []
+    },
+    "link": [
+      {
+        "href": "https://www.linkedin.com/legal/cookie-policy",
+        "text": "Cookie Policy",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/mypreferences/g/guest-cookies",
+        "text": "settings",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/checkpoint/rp/request-password-reset?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fjobs%2Fsearch-results%2F%3Fkeywords%3Dmachine%2Blearning%26origin%3DJOB_COLLECTION_PAGE_SEARCH_BUTTON%26_l%3Den",
+        "text": "\n            Forgot password?\n          ",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fsearch-results%2F%3Fkeywords%3Dmachine%2Blearning%26origin%3DJOB_COLLECTION_PAGE_SEARCH_BUTTON%26_l%3Den",
+        "text": "Join now",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/user-agreement",
+        "text": "User Agreement",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/privacy-policy",
+        "text": "Privacy Policy",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/cookie-policy",
+        "text": "Cookie Policy",
+        "type": "a"
+      }
+    ],
+    "data": [],
+    "success": true,
+    "advance_config": {
+      "console": [],
+      "network": [],
+      "cookies": []
+    },
+    "_usage": {
+      "input_tokens": 50,
+      "output_tokens": 307,
+      "inference_time_tokens": 29930,
+      "total_tokens": 30287
+    }
+  },
+  {
+    "page_position": 1,
+    "page_position_length": 1,
+    "context": {},
+    "selectors": {
+      "job title": [],
+      "company name": [],
+      "tags": [],
+      "date posted": []
+    },
+    "link": [
+      {
+        "href": "https://www.linkedin.com/checkpoint/rp/request-password-reset?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fjobs%2Fsearch-results%2F%3Fkeywords%3Dmachine%2Blearning%26origin%3DJOB_COLLECTION_PAGE_SEARCH_BUTTON%26_l%3Den",
+        "text": "\n            Forgot password?\n          ",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/signup/cold-join?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fjobs%2Fsearch-results%2F%3Fkeywords%3Dmachine%2Blearning%26origin%3DJOB_COLLECTION_PAGE_SEARCH_BUTTON%26_l%3Den",
+        "text": "Join now",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/user-agreement",
+        "text": "User Agreement",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/privacy-policy",
+        "text": "Privacy Policy",
+        "type": "a"
+      },
+      {
+        "href": "https://www.linkedin.com/legal/cookie-policy",
+        "text": "Cookie Policy",
+        "type": "a"
+      }
+    ],
+    "data": [],
+    "success": true,
+    "advance_config": {
+      "console": [],
+      "network": [],
+      "cookies": []
+    },
+    "_usage": {
+      "input_tokens": 50,
+      "output_tokens": 261,
+      "inference_time_tokens": 33993,
+      "total_tokens": 34304
+    }
+  }
+]
