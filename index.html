@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerCraft AI - Your Future, Found.</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- CSS STYLING --- */
+
+        /* 1. Global Styles & Variables */
+        :root {
+            --bg-color: #121212;
+            --primary-surface: #1e1e1e;
+            --secondary-surface: #2a2a2a;
+            --primary-text: #e0e0e0;
+            --secondary-text: #a0a0a0;
+            --accent-gradient: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            --accent-color: #2575fc;
+            --border-color: #3a3a3a;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+
+        /* 2. Header / Navigation */
+        .main-header {
+            background-color: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            text-decoration: none;
+        }
+        .logo i {
+            color: var(--accent-color);
+            margin-right: 8px;
+        }
+
+        /* 3. Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding-top: 80px; /* Offset for fixed header */
+            background: var(--bg-color) url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80"%3E%3Cpath fill="%231a1a1a" fill-opacity="0.4" d="M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v5.13a4 4 0 1 1-2 0V16zM54 56h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v5.13a4 4 0 1 1-2 0V56z"%3E%3C/path%3E%3C/svg%3E');
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--accent-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(37, 117, 252, 0.2);
+        }
+
+        /* 4. Main Application Section */
+        #app-section {
+            padding: 100px 0;
+            background-color: var(--primary-surface);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        #app-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .upload-area {
+            background-color: var(--secondary-surface);
+            border: 2px dashed var(--border-color);
+            border-radius: 10px;
+            padding: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .upload-area.drag-over {
+            border-color: var(--accent-color);
+            background-color: #252a3a;
+        }
+
+        .upload-area i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .upload-area p {
+            color: var(--secondary-text);
+        }
+        
+        #file-input {
+            display: none;
+        }
+        
+        #file-name {
+            margin-top: 1rem;
+            font-style: italic;
+            color: var(--accent-color);
+        }
+
+        #submit-btn {
+            display: block;
+            margin: 2rem auto 0;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border: none;
+            background: var(--accent-gradient);
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #submit-btn:disabled {
+            background: var(--border-color);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        #submit-btn:not(:disabled):hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(37, 117, 252, 0.2);
+        }
+
+
+        /* 5. Loader and Results Section */
+        #results-section {
+            padding: 80px 0;
+            display: none; /* Initially hidden */
+        }
+
+        #results-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--border-color);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 40px auto;
+            display: none; /* Initially hidden */
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        #job-listings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .job-card {
+            background-color: var(--primary-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow-color);
+            border-color: var(--accent-color);
+        }
+        .job-card h3 {
+            color: var(--primary-text);
+            margin-bottom: 8px;
+        }
+        .job-card .company {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .job-card .location {
+            color: var(--secondary-text);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .job-card .description-snippet {
+            color: var(--secondary-text);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            height: 75px; /* Fixed height for consistency */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .job-card .apply-link {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: var(--accent-color);
+            padding: 8px 18px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .job-card .apply-link:hover {
+            background-color: #1c66d4;
+        }
+
+
+        /* 6. Footer */
+        .main-footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-text);
+        }
+
+        /* 7. Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            #app-section h2, #results-section h2 {
+                font-size: 2rem;
+            }
+            .upload-area {
+                padding: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo"><i class="fas fa-cogs"></i> CareerCraft AI</a>
+            <nav>
+                <!-- Add nav links here if needed -->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Your Future, Found.</h1>
+                    <p>Stop endlessly searching. Let our AI analyze your resume and instantly match you with the perfect jobs from our extensive database.</p>
+                    <a href="#app-section" class="cta-button">Get Started Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Application Section -->
+        <section id="app-section">
+            <div class="container">
+                <h2>Upload Your Resume</h2>
+                <form id="upload-form">
+                    <input type="file" id="file-input" accept=".pdf,.doc,.docx,.txt">
+                    <label for="file-input" id="upload-area" class="upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p><strong>Drag & Drop</strong> your resume here, or <strong>click to select a file</strong>.</p>
+                        <p class="supported-formats">(PDF, DOC, DOCX, TXT supported)</p>
+                        <p id="file-name"></p>
+                    </label>
+                    <button type="submit" id="submit-btn" disabled>Find My Jobs</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results Section (Initially Hidden) -->
+        <section id="results-section">
+            <div class="container">
+                <h2>Suitable Job Openings</h2>
+                <div id="loader" class="loader"></div>
+                <div id="job-listings">
+                    <!-- Job cards will be dynamically inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2024 CareerCraft AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- JAVASCRIPT LOGIC ---
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- DOM Element References ---
+            const uploadForm = document.getElementById('upload-form');
+            const fileInput = document.getElementById('file-input');
+            const uploadArea = document.getElementById('upload-area');
+            const fileNameDisplay = document.getElementById('file-name');
+            const submitBtn = document.getElementById('submit-btn');
+            const loader = document.getElementById('loader');
+            const resultsSection = document.getElementById('results-section');
+            const jobListingsContainer = document.getElementById('job-listings');
+
+            let uploadedFile = null;
+
+            // --- File Upload & Drag-and-Drop Logic ---
+
+            // Highlight drop area when file is dragged over
+            uploadArea.addEventListener('dragover', (event) => {
+                event.preventDefault();
+                uploadArea.classList.add('drag-over');
+            });
+
+            // Remove highlight when file leaves the drop area
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('drag-over');
+            });
+
+            // Handle file drop
+            uploadArea.addEventListener('drop', (event) => {
+                event.preventDefault();
+                uploadArea.classList.remove('drag-over');
+                const files = event.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFile(files[0]);
+                }
+            });
+            
+            // Handle file selection via click
+            fileInput.addEventListener('change', (event) => {
+                const files = event.target.files;
+                if (files.length > 0) {
+                    handleFile(files[0]);
+                }
+            });
+
+            // Function to process the selected file
+            function handleFile(file) {
+                // You can add file type/size validation here
+                uploadedFile = file;
+                fileNameDisplay.textContent = `Selected file: ${file.name}`;
+                submitBtn.disabled = false;
+            }
+
+
+            // --- Form Submission & API Call Simulation ---
+
+            uploadForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent default form submission
+                
+                if (!uploadedFile) {
+                    alert('Please select a resume file first!');
+                    return;
+                }
+                
+                // Show loader and results section
+                resultsSection.style.display = 'block';
+                loader.style.display = 'block';
+                jobListingsContainer.innerHTML = ''; // Clear previous results
+
+                // Scroll to the results section
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+
+                // ** THIS IS WHERE YOU'LL MAKE YOUR REAL API CALL **
+                // We'll simulate it with a setTimeout
+                simulateApiCall(uploadedFile); 
+            });
+
+            function simulateApiCall(file) {
+                console.log('Simulating API call with file:', file.name);
+
+                // Create a FormData object to send the file
+                const formData = new FormData();
+                formData.append('resume', file);
+                
+                // ================================================================
+                // ==                 !!! IMPORTANT !!!                          ==
+                // ==  Replace this setTimeout with your actual fetch() call.    ==
+                // ================================================================
+                /* 
+                fetch('YOUR_BACKEND_API_ENDPOINT', {
+                    method: 'POST',
+                    body: formData 
+                })
+                .then(response => response.json())
+                .then(data => {
+                    loader.style.display = 'none'; // Hide loader
+                    displayJobs(data.jobs); // 'data.jobs' should be your array of job objects
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    loader.style.display = 'none';
+                    jobListingsContainer.innerHTML = '<p style="text-align: center; color: #ff6b6b;">Sorry, something went wrong. Please try again.</p>';
+                });
+                */
+
+                // Simulating a 2.5-second network delay
+                setTimeout(() => {
+                    loader.style.display = 'none'; // Hide loader on success
+                    
+                    // Mock data that your backend would return
+                    const mockJobData = [
+                        {
+                            title: 'Senior Frontend Developer',
+                            company: 'InnovateTech Solutions',
+                            location: 'San Francisco, CA (Remote optional)',
+                            description: 'Join our team to build next-generation web applications using React, TypeScript, and GraphQL. You will be responsible for creating beautiful and performant user interfaces.',
+                            apply_url: '#'
+                        },
+                        {
+                            title: 'AI/ML Engineer',
+                            company: 'DataDriven Inc.',
+                            location: 'New York, NY',
+                            description: 'We are seeking a talented Machine Learning Engineer to design, build, and deploy models that solve real-world problems. Experience with Python, TensorFlow, or PyTorch is required.',
+                            apply_url: '#'
+                        },
+                        {
+                            title: 'Cloud Infrastructure Engineer',
+                            company: 'SkyNet Hosting',
+                            location: 'Austin, TX',
+                            description: 'Manage and scale our global cloud infrastructure on AWS. Strong experience with Kubernetes, Terraform, and CI/CD pipelines is essential for this role.',
+                            apply_url: '#'
+                        },
+                        {
+                            title: 'UX/UI Designer',
+                            company: 'Creative Pixels',
+                            location: 'Los Angeles, CA',
+                            description: 'Passionate about creating intuitive and visually stunning user experiences? Join us to shape the look and feel of our mobile and web products. A strong portfolio is a must.',
+                            apply_url: '#'
+                        },
+                         {
+                            title: 'Junior Software Engineer',
+                            company: 'CodeStart',
+                            location: 'Boston, MA (Hybrid)',
+                            description: 'An exciting opportunity for a recent graduate. You will work alongside senior engineers, contributing to our flagship product while learning and growing your skills in a supportive environment.',
+                            apply_url: '#'
+                        },
+                         {
+                            title: 'Product Manager',
+                            company: 'FutureVision Products',
+                            location: 'Seattle, WA',
+                            description: 'Define the roadmap and strategy for our innovative B2B SaaS platform. You will collaborate with engineering, design, and marketing to deliver products that our customers love.',
+                            apply_url: '#'
+                        }
+                    ];
+
+                    displayJobs(mockJobData);
+
+                }, 2500);
+            }
+
+            // --- Function to Display Job Results ---
+
+            function displayJobs(jobs) {
+                if (!jobs || jobs.length === 0) {
+                    jobListingsContainer.innerHTML = '<p style="text-align: center;">No suitable jobs found based on your resume. Try updating your resume or check back later!</p>';
+                    return;
+                }
+
+                jobs.forEach(job => {
+                    const jobCard = document.createElement('div');
+                    jobCard.className = 'job-card';
+                    
+                    // Using template literals for clean HTML structure
+                    jobCard.innerHTML = `
+                        <h3>${job.title}</h3>
+                        <p class="company">${job.company}</p>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> ${job.location}</p>
+                        <p class="description-snippet">${job.description}</p>
+                        <a href="${job.apply_url}" target="_blank" class="apply-link">View & Apply <i class="fas fa-external-link-alt"></i></a>
+                    `;
+
+                    jobListingsContainer.appendChild(jobCard);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
